@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_2/Scaffold_widget.dart';
 import 'package:widget_2/image_widget.dart';
+import './dialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ImageWidget(),
+      home: ScaffoldWidget(),
     );
   }
 }

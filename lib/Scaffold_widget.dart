@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dialog.dart';
 
 class ScaffoldWidget extends StatelessWidget {
   const ScaffoldWidget({super.key});
@@ -22,15 +23,20 @@ class ScaffoldWidget extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 142, 0, 0),
         foregroundColor: Colors.white,
       ),
-      body: const Center(
-        child: Text(
-          "You have press the button",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.red,
-            fontWeight: FontWeight.bold,
+      body: Column(
+        children: [
+          const Center(
+            child: Text(
+              "You have press the button",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
-        ),
+          DialogWidget(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.red,
