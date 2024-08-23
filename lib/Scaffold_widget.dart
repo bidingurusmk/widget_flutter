@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:widget_2/input_selection.dart';
 import 'dialog.dart';
+import 'date_widget.dart';
 
 class ScaffoldWidget extends StatelessWidget {
   const ScaffoldWidget({super.key});
@@ -36,6 +38,8 @@ class ScaffoldWidget extends StatelessWidget {
             ),
           ),
           DialogWidget(),
+          InputSelection(),
+          DateWidget(title: "widget tanggal"),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
