@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_2/input_selection.dart';
+import 'package:widget_2/row_column.dart';
 import 'dialog.dart';
 import 'date_widget.dart';
 
@@ -25,23 +26,24 @@ class ScaffoldWidget extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 142, 0, 0),
         foregroundColor: Colors.white,
       ),
-      body: Column(
-        children: [
-          const Center(
-            child: Text(
-              "You have press the button",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          DialogWidget(),
-          InputSelection(),
-          DateWidget(title: "widget tanggal"),
-        ],
-      ),
+      body: RowColumn(),
+      // Column(
+      //   children: [
+      //     const Center(
+      //       child: Text(
+      //         "You have press the button",
+      //         style: TextStyle(
+      //           fontSize: 20,
+      //           color: Colors.red,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //     ),
+      //     DialogWidget(),
+      //     InputSelection(),
+      //     DateWidget(title: "widget tanggal"),
+      //   ],
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.red,
         unselectedItemColor: Colors.grey,
