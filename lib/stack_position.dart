@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widget_function.dart';
 
 class StackPosition extends StatelessWidget {
   const StackPosition({super.key});
@@ -13,7 +14,7 @@ class StackPosition extends StatelessWidget {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
@@ -23,13 +24,13 @@ class StackPosition extends StatelessWidget {
                 child: Stack(
                   // alignment: Alignment.topCenter,
                   children: [
-                    Center(
+                    const Center(
                       child: Image(
                         image: AssetImage("assets/money_bg.png"),
                         width: 200,
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       left: 15,
                       bottom: 10,
                       child: Text(
@@ -41,7 +42,7 @@ class StackPosition extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       top: 175,
                       right: 20,
                       child: CircleAvatar(
@@ -54,7 +55,7 @@ class StackPosition extends StatelessWidget {
                       top: 6,
                       right: 10,
                       child: PopupMenuButton<String>(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.more_vert,
                           color: Colors.white,
                           size: 30.0,
@@ -73,7 +74,7 @@ class StackPosition extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -86,14 +87,14 @@ class StackPosition extends StatelessWidget {
                   children: [
                     Container(
                       padding: EdgeInsets.only(top: 10, left: 20),
-                      child: Text(
-                        "Transaksi",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           border: Border(
                         bottom: BorderSide(color: Colors.grey),
                       )),
+                      child: const Text(
+                        "Transaksi",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Container(
                       height: 200,
@@ -103,48 +104,9 @@ class StackPosition extends StatelessWidget {
                         crossAxisSpacing: 0,
                         padding: EdgeInsets.all(8),
                         children: [
-                          Container(
-                            child: Column(
-                              children: [
-                                Image(
-                                  image: AssetImage('assets/pulsa.png'),
-                                  width: 50,
-                                ),
-                                Text(
-                                  "Pulsa",
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: Column(
-                              children: [
-                                Image(
-                                  image: AssetImage('assets/pln.png'),
-                                  width: 50,
-                                ),
-                                Text(
-                                  "PLN",
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: Column(
-                              children: [
-                                Image(
-                                  image: AssetImage('assets/tv.png'),
-                                  width: 50,
-                                ),
-                                Text(
-                                  "Langganan TV",
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
+                          WidgetFunction('assets/pulsa.png','Pulsa'),
+                          WidgetFunction('assets/pln.png','PLN'),
+                          WidgetFunction('assets/tv.png','Langganan TV'),
                           Container(
                             child: Column(
                               children: [
@@ -361,7 +323,7 @@ class Constants {
   ];
 }
 
-void choiceAction(String choice) {
+choiceAction(String choice) {
   if (choice == Constants.FirstItem) {
     print('I First Item');
   } else if (choice == Constants.SecondItem) {
